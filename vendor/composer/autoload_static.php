@@ -310,6 +310,7 @@ class ComposerStaticInit50e697582921f1c764a4d0be361f193c
         'App\\Http\\Controllers\\GeneroController' => __DIR__ . '/../..' . '/app/Http/Controllers/GeneroController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\SalaController' => __DIR__ . '/../..' . '/app/Http/Controllers/SalaController.php',
+        'App\\Http\\Controllers\\SolicitanteController' => __DIR__ . '/../..' . '/app/Http/Controllers/SolicitanteController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',

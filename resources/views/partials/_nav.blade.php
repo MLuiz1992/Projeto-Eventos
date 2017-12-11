@@ -9,7 +9,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">CMAN - Agendamento de Eventos</a>
+      <a class="navbar-brand" href="#">Agendamento de Eventos</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->

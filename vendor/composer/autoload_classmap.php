@@ -25,6 +25,7 @@ return array(
     'App\\Http\\Controllers\\GeneroController' => $baseDir . '/app/Http/Controllers/GeneroController.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\SalaController' => $baseDir . '/app/Http/Controllers/SalaController.php',
+    'App\\Http\\Controllers\\SolicitanteController' => $baseDir . '/app/Http/Controllers/SolicitanteController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\EncryptCookies' => $baseDir . '/app/Http/Middleware/EncryptCookies.php',
     'App\\Http\\Middleware\\RedirectIfAuthenticated' => $baseDir . '/app/Http/Middleware/RedirectIfAuthenticated.php',

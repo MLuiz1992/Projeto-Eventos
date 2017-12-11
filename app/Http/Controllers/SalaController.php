@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Sala;
 use Illuminate\Http\Request;
+use Session;
+use App\Http\Requests\SalaRequest;
 
 class SalaController extends Controller
 {
@@ -14,7 +16,9 @@ class SalaController extends Controller
      */
     public function index()
     {
-        //
+        $salas = Sala::all();
+
+        return view('salas.index', compact('salas'));
     }
 
     /**
@@ -24,7 +28,7 @@ class SalaController extends Controller
      */
     public function create()
     {
-        //
+        return view('salas.create');
     }
 
     /**
@@ -33,9 +37,23 @@ class SalaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SalaRequest $request)
     {
-        //
+        $this->validate($request, [
+            'id' => 'required|unique:salas,ident',
+            'nome' => 'required',
+        ]);
+
+        $sala = new Sala();
+
+        $sala->ident = $request->id;
+        $sala->nome = $request->nome;
+
+        $sala->save();
+
+        Session::flash('success', 'Sala cadastrada com sucesso!');
+        
+        return redirect()->route('salas.index');
     }
 
     /**
@@ -46,7 +64,9 @@ class SalaController extends Controller
      */
     public function show(Sala $sala)
     {
-        //
+        $sala = Sala::find($id);
+
+        return view('salas.show', compact('sala'));
     }
 
     /**
@@ -55,9 +75,11 @@ class SalaController extends Controller
      * @param  \App\Sala  $sala
      * @return \Illuminate\Http\Response
      */
-    public function edit(Sala $sala)
+    public function edit($id)
     {
-        //
+        $sala = Sala::find($id);
+
+        return view('salas.edit', compact('sala'));
     }
 
     /**
@@ -69,7 +91,14 @@ class SalaController extends Controller
      */
     public function update(Request $request, Sala $sala)
     {
-        //
+        $sala->ident = $request->ident;
+        $sala->nome = $request->nome;
+
+        $sala->save();
+
+        Session::flash('success', 'Sala atualizada com sucesso!');
+
+        return redirect()->route('salas.index');
     }
 
     /**
@@ -78,8 +107,14 @@ class SalaController extends Controller
      * @param  \App\Sala  $sala
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Sala $sala)
+    public function destroy($id)
     {
-        //
+        $sala = Sala::find($id);
+
+        $sala->delete();
+
+        Session::flash('success', 'A Sala foi deletada com Sucesso!');
+
+        return redirect()->route('salas.index');
     }
 }

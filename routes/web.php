@@ -21,6 +21,7 @@ Route::resource('atores', 'AtorController');
 Route::resource('solicitantes', 'SolicitanteController');
 Route::resource('generos', 'GeneroController');
 Route::resource('eventos', 'EventoController');
+Route::resource('salas', 'SalaController');
 
 //Avaliações
 Route::post('comments/{lista_id}', ['uses' => 'CommentsController@store', 'as' => 'comments.store']);
